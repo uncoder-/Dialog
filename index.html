@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Dialog</title>
+</head>
+<body>
+	<button onclick="cl()">Test</button>
+	<script src='Dialog.js'></script>
+	<script>
+		function cl(){
+			Dialog({
+				'title':'我是标题',
+				'content':'我是对话框主体内容,我是对话框主体内容,我是对话框主体内容',
+				'btns':[{
+					value:'确认',
+					callback:function(){
+						alert('success');
+					}
+				},{
+					value:'重复',
+					callback:function(){
+						alert('repeat');
+					}
+				},{
+					value:'取消',
+					callback:function(){
+						alert('cancel');	
+					}
+				}]
+			});
+		}
+		//console.log(myDialog)
+	</script>
+</body>
+</html>
