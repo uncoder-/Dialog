@@ -16,8 +16,7 @@ var DialogStyle = {
 		'width': '14.375em',
 		'color': 'black',
 		'background': 'white',
-		'border-radius': '0.2em',
-		'z-index': 999999
+		'border-radius': '0.2em'
 	},
 	title: {
 		'text-indent': '20px',
