@@ -6,7 +6,7 @@ var DialogStyle = {
 		'right':0,
 		'bottom':0,
 		'font-size':'16px',
-		'background':'rgba(0, 0, 0,0.3)'
+		'background':'rgba(0, 0, 0,0.65)'
 	},
 	container: {
 		'position':'absolute',
@@ -15,20 +15,23 @@ var DialogStyle = {
 		'width': '14.375em',
 		'color': 'black',
 		'background': 'white',
-		'border-radius':'0.625em',
+		'border-radius':'0.2em',
 		'z-index':999999
 	},
 	title: {
 		'text-indent':'20px',
 		'line-height':'35px',
-		'border-bottom':'1px solid #999'
+		'border-bottom':'1px solid #eee'
 	},
 	content:{
 		'padding':'15px',
 		'min-height':'50px',
+		'max-width':'300px',
+		'font-size': '13px',
 		'line-height':'1.2',
 		'text-align':'center',
-		'border-bottom':'1px solid #999'
+		'color':'#666',
+		'border-bottom':'1px solid #D5D5D6'
 	},
 	btns:{
 		'display':'flex'
@@ -37,6 +40,7 @@ var DialogStyle = {
 		'flex':1,
 		'height':'35px',
 		'line-height':'35px',
+		'border-right':'1px solid #D5D5D6',
 		'text-align':'center'
 	}
 }
@@ -72,7 +76,7 @@ Dialog.prototype.init = function() {
 	}
 	if (this.btns) {
 		var btnNodes = document.createElement('div');
-			this.addStyle(btnNodes,DialogStyle.btns)
+			this.addStyle(btnNodes,DialogStyle.btns);
 		for (var i in this.btns) {
 			var btn = document.createElement('div');
 			this.addStyle(btn,DialogStyle.btn);
@@ -81,7 +85,7 @@ Dialog.prototype.init = function() {
 				el.addEventListener('click', function() {
 					self.btns[j].callback();
 					self.close(self);
-				}, false)
+				}, false);
 			})(btn,i);
 			btnNodes.appendChild(btn);
 		};
